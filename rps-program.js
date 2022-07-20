@@ -22,6 +22,11 @@ function getComputerChoice() {
     return compChoice;
 }
 
+function getPlayerChoice() {
+    playerChoice = window.prompt("What's your choice?\n Rock\n Paper \n Scissors");
+    return playerChoice;
+}
+
 
 
 getComputerChoice();
