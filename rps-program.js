@@ -83,11 +83,15 @@ function game() {
         console.log("_")
      }
      if (computerScore > playerScore) {
-        console.log("You lost.")
+        console.log(`You lost. Computer score: ${computerScore}) || Player score: ${playerScore}`)
+     }
+     if (computerScore < playerScore) {
+        console.log(`You won. Computer score: ${computerScore}) || Player score: ${playerScore}`)
      }
      else {
-        console.log("You won!");
+        console.log(`It's a tie. Computer score: ${computerScore}) || Player score: ${playerScore}`)
      }
+     
 }
  
 game();
