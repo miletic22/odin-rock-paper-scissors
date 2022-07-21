@@ -1,46 +1,46 @@
-let compChoice;
-let playerChoice;
+let computerSelection;
+let playerSelection;
 
 function getComputerChoice() {
     switch (Math.floor(Math.random() * 3 + 1)) { // Creates a random number between 1-3
         case 1: 
-            compChoice = "rock";
+            computerSelection = "rock";
             break;
 
         case 2: 
-            compChoice = "paper";
+            computerSelection = "paper";
             break;
 
         case 3: 
-            compChoice = "scissors";
+            computerSelection = "scissors";
             break;
         default:
             console.log("Number is not 1-3, something went wrong.")
 }
-    return compChoice;
+    return computerSelection;
 
 }
 
 function getPlayerChoice() {
-    playerChoice = window.prompt("What's your choice?\n Rock\n Paper \n Scissors");
-    playerChoice = playerChoice.toLowerCase();
-    return playerChoice;
+    playerSelection = window.prompt("What's your choice?\n Rock\n Paper \n Scissors");
+    playerSelection = playerSelection.toLowerCase();
+    return playerSelection;
 
 }
 
 
-compChoice = getComputerChoice();
-playerChoice = getPlayerChoice();
+computerSelection = getComputerChoice();
+playerSelection = getPlayerChoice();
 
-function playGame (compChoice, playerChoice) {
+function playGame (computerSelection, playerSelection) {
 
 
-    if (playerChoice == compChoice) {
+    if (playerSelection == computerSelection) {
         return console.log("It's a tie!");
     }
     
-    if (playerChoice == "rock") {
-        if (compChoice == "scissors") {
+    if (playerSelection == "rock") {
+        if (computerSelection == "scissors") {
             return console.log("You win! Rock beats Scissors!");
         }
         else {
@@ -48,8 +48,8 @@ function playGame (compChoice, playerChoice) {
         }
     }
 
-    if (playerChoice == "paper") {
-        if (compChoice == "scissors") {
+    if (playerSelection == "paper") {
+        if (computerSelection == "scissors") {
             return console.log("You lose! Paper loses to Scissors!");
         }
         else {
@@ -57,8 +57,8 @@ function playGame (compChoice, playerChoice) {
         }
     }
 
-    if (playerChoice == "scissors") {
-        if (compChoice == "rock") {
+    if (playerSelection == "scissors") {
+        if (computerSelection == "rock") {
             return console.log("You lose! Scissors loses to Rock!");
         }
         else {
@@ -67,4 +67,4 @@ function playGame (compChoice, playerChoice) {
     }
 }
 
- playGame (compChoice, playerChoice);
+ playGame (computerSelection, playerSelection);
