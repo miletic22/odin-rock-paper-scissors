@@ -1,3 +1,6 @@
+let compChoice;
+let playerChoice;
+
 function getComputerChoice() {
     switch (Math.floor(Math.random() * 3 + 1)) { // Creates a random number between 1-3
         case 1: 
@@ -26,10 +29,11 @@ function getPlayerChoice() {
 }
 
 
+compChoice = getComputerChoice();
+playerChoice = getPlayerChoice();
 
-function playGame (g) {
-    let compChoice = getComputerChoice();
-    let playerChoice = getPlayerChoice();
+function playGame (compChoice, playerChoice) {
+
 
     if (playerChoice == compChoice) {
         return console.log("It's a tie!");
@@ -63,4 +67,4 @@ function playGame (g) {
     }
 }
 
-playGame();
+ playGame (compChoice, playerChoice);
