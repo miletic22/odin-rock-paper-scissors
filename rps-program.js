@@ -90,8 +90,7 @@ function game() {
      }
      else {
         console.log(`It's a tie. Computer score: ${computerScore}) || Player score: ${playerScore}`)
-     }
-     
+     }    
 }
  
 game();

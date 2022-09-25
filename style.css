@@ -1,0 +1,33 @@
+body {
+    background: black;
+    color: white;
+}
+
+.button{
+    background-color: grey;
+    border: 1px white solid;
+
+    font-size: 20px;
+    padding: 50px;
+    text-align: center;
+}
+
+section{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    height: 500px;
+}
+
+span {
+    display: block;
+
+    border: 1px white solid;
+}
+
+span:hover{
+    background-color: black;
+    color: white;
+    border: 1px white solid;
+}
