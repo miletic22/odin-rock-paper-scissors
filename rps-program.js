@@ -1,5 +1,6 @@
 let computerScore = 0;
 let playerScore = 0;
+
 function getComputerChoice() {
     let computerSelection;
     switch (Math.floor(Math.random() * 3 + 1)) { // Creates a random number between 1-3
@@ -14,21 +15,10 @@ function getComputerChoice() {
         case 3: 
             computerSelection = "scissors";
             break;
-        default:
-            console.log("Number is not 1-3, something went wrong.")
 }
     return computerSelection;
 
 }
-
-function getPlayerChoice() {
-    let playerSelection;
-    playerSelection = window.prompt("What's your choice?\n Rock\n Paper \n Scissors");
-    playerSelection = playerSelection.toLowerCase();
-    return playerSelection;
-}
-
-
 
 function playRound (computerSelection, playerSelection) {
 
@@ -73,24 +63,43 @@ function playRound (computerSelection, playerSelection) {
     }
 }
 
-function game() {
-    for (let i = 0; i < 5; i++) {
-        computerSelection = getComputerChoice();
-        playerSelection = getPlayerChoice();
-        playRound(computerSelection, playerSelection);
-        console.log(`Computer chose: ${computerSelection} || Player chose: ${playerSelection}`);
-        console.log(`Computer score: ${computerScore}) || Player score: ${playerScore}`);
-        console.log("_")
-     }
+function game(event) {
+    const btn = document.querySelector(`.button[data-key="${event.keyCode}"]`);
+    if (!btn) return;
+
+    btn.classList.add("selected");
+    let playerSelection;
+    switch(event.keyCode){
+        case 49: 
+            playerSelection = "rock";
+            break;
+
+        case 50: 
+            playerSelection = "paper";
+            break;
+
+        case 51:
+            playerSelection = "scissors";
+            break;
+    }
+    computerSelection = getComputerChoice();
+
+    console.log(`Computer chose: ${computerSelection} || Player chose: ${playerSelection}`);
+    // console.log(`Computer score: ${computerScore}) || Player score: ${playerScore}`);
+    console.log("_");
+    playRound(computerSelection, playerSelection);
+
      if (computerScore > playerScore) {
-        console.log(`You lost. Computer score: ${computerScore}) || Player score: ${playerScore}`)
+        console.log(`You lost. Computer score: ${computerScore} || Player score: ${playerScore}`)
      }
      if (computerScore < playerScore) {
-        console.log(`You won. Computer score: ${computerScore}) || Player score: ${playerScore}`)
+        console.log(`You won. Computer score: ${computerScore} || Player score: ${playerScore}`)
      }
-     else {
-        console.log(`It's a tie. Computer score: ${computerScore}) || Player score: ${playerScore}`)
+     if (computerScore == playerScore) {
+        console.log(`It's a tie. Computer score: ${computerScore} || Player score: ${playerScore}`)
      }    
 }
  
-game();
+// game();
+
+window.addEventListener('keydown', game);

@@ -26,8 +26,7 @@ span {
     border: 1px white solid;
 }
 
-span:hover{
+.selected{
     background-color: black;
-    color: white;
-    border: 1px white solid;
+    border: 3px white solid;
 }
