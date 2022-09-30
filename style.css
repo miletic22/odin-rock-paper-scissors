@@ -66,7 +66,7 @@ main {
     justify-content: center;
 }
 
-.options {
+#options {
     background-image: url("images/triangle.png");
     background-repeat: no-repeat;
     background-position: center;
@@ -75,7 +75,36 @@ main {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    transition: all 0.2s;
+
 }
+
+#popup{
+    position: absolute;
+    width: 476px;
+    height: 430px;
+    scale: 0.001; 
+    visibility: hidden; 
+    scale: 0.01;
+    transition: all 0.2s;
+}
+
+.popup-open{
+    scale: 1 !important; 
+    visibility: visible !important;
+}
+
+.options-hide{
+    scale: 0.01;
+    visibility: hidden;
+}
+
+
+#popup img{
+    width: 476px;
+    height: 430px;
+}
+
 
 .icon-paper{
     margin-right: 20px;
@@ -99,7 +128,7 @@ main {
     justify-content: flex-end;
 }
 
-.button {
+#button {
     border: 1px solid white;
     display: inline-block;
     border-radius: 5px;
@@ -110,10 +139,9 @@ main {
     right: 10px;
 
     user-select: none;
-
 }
 
-.button:hover {
+#button:hover {
     background: #2D417D;
     color: white;
     cursor: pointer;
