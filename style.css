@@ -1,32 +1,130 @@
 body {
-    background: radial-gradient(circle, rgba(63,94,251,1) 0%, rgba(13,23,42,1) 100%);
+    /* background: radial-gradient(circle, rgba(63,94,251,1) 0%, rgba(13,23,42,1) 100%); */
+    background: #182343;
     color: white;
+
+    margin: 0;
+    padding: 0;
 }
 
-.button{
-    background-color: grey;
-    border: 1px white solid;
-
-    font-size: 20px;
-    padding: 50px;
-    text-align: center;
-}
-
-section{
+header {
     display: flex;
-    flex-direction: row;
+    justify-content: center;
+}
+
+p {
+    margin: 0;
+    padding: 0;
+}
+
+
+.headerContainer {
+    border: 3px solid grey;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 30px;
+
+    text-transform: uppercase;
+    font-family: 'Oswald', sans-serif;
+    text-align: center;
+
+    display: flex;
+    justify-content: space-between;
+    width: 50%;
+}
+
+#scoreNum {
+    font-size: 50px;
+    margin: 0;
+    padding: 0;
+    font-family: 'Anton', sans-serif;
+    color: #555264;
+
+    position: relative;
+    bottom: 5px;
+}
+
+.scoreSection {
+    background: white;
+    border-radius: 10px;
+    color: #06249C;
+    padding: 0 25px 0 25px;
+    width: 100px;
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     align-items: center;
-    justify-content: space-evenly;
-    height: 500px;
 }
 
-span {
-    display: block;
-
-    border: 1px white solid;
+main {
+    height: 100%;
 }
 
-.selected{
-    background-color: black;
-    border: 3px white solid;
+.wrapper {
+    display: flex;
+    justify-content: center;
+}
+
+.options {
+    background-image: url("images/triangle.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 476px;
+    height: 430px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.icon-paper{
+    margin-right: 20px;
+}
+
+.icon-scissors{
+    margin-left: 20px;
+}
+
+.icon-container{
+    transition: all 0.1s; 
+}
+
+.icon-container:hover{
+    transform: translate3d(0px, -8px, 0);
+    cursor: pointer;
+}
+
+.button-wrap{
+    display: flex;
+    justify-content: flex-end;
+}
+
+.button {
+    border: 1px solid white;
+    display: inline-block;
+    border-radius: 5px;
+    padding: 5px 20px 5px 20px;
+
+    position: relative;
+    bottom: 10px;
+    right: 10px;
+
+    user-select: none;
+
+}
+
+.button:hover {
+    background: #2D417D;
+    color: white;
+    cursor: pointer;
+    text-decoration:solid;
+}
+
+footer {
+    background: black;
+    color: white;
+
+    padding: 5px 0 5px 0;
+    width: 100%;
+    text-align: center;
 }
