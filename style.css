@@ -4,10 +4,13 @@ body {
         #1f3757 0%,
         #131537 100%
     );
-    color: white;
 
+    color: white;
     margin: 0;
     padding: 0;
+
+    min-height: 100vh;
+    overflow-y: hidden;
 }
 
 header {
@@ -21,6 +24,12 @@ p {
 }
 
 
+.page-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
 .headerContainer {
     border: 3px solid grey;
     border-radius: 10px;
@@ -33,8 +42,10 @@ p {
 
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
     width: 50%;
 }
+
 
 #scoreNum {
     font-size: 50px;
@@ -79,7 +90,6 @@ main {
     flex-wrap: wrap;
     justify-content: center;
     transition: all 0.2s;
-
 }
 
 #popup{
@@ -148,10 +158,10 @@ main {
     background: #2D417D;
     color: white;
     cursor: pointer;
-    text-decoration:solid;
+    text-decoration: solid;
 }
 
-footer {
+footer p{
     background: black;
     color: white;
 
@@ -159,3 +169,24 @@ footer {
     width: 100%;
     text-align: center;
 }
+
+
+@media only screen and (max-width: 623px) {
+    .headerContainer {
+        width: 100%;
+    }
+    .scoreSection {
+        padding: 0 auto 0 auto;
+    }
+};
+
+@media only screen and (max-width: 417px) {
+    .headerContainer {
+        justify-content: center;
+        align-items: center;
+    }
+
+    .scoreSection {
+        width: 3000px;
+    }
+};
